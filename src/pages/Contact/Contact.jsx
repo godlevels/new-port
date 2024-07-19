@@ -5,13 +5,14 @@ const Contact = () => {
   return (
     <div className='py-10 md:p-24 text-[#363636] px-4 font-mono' id='contact'>
       <div className="heading">
-        <h1 className='text-center text-[60px] sm:text-9xl'>Let us start <br /> a project</h1>
+        <h1 className='text-center text-[60px] sm:text-9xl leading-[4rem]'>Let us start <br /> a project</h1>
       </div>
       <div className='mt-16 sm:flex w-full justify-around'>
         <div className='max-w-[600px]'>
-          <h2 className='text-base mt-4 text-justify'>
-            I am open to <span className='font-bold'>building projects</span> and <span className='font-bold'>Technical Writing</span> opportunities. You can also pitch me your Open-Source Project
+          <h2 className='text-base mt-2 mb-4 text-justify'>
+            I am open to <span className='font-bold'>building projects</span> and <span className='font-bold'>Technical Writing</span> opportunities. You can also pitch me your Open-Source Projects.
           </h2>
+          <span className='text-base mt-4 text-justify flex items-center justify-center mt-8'>What I cannot do, cannot be done!!!</span>
         </div>
       </div>
 

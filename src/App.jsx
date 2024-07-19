@@ -7,6 +7,7 @@ import Contact from './pages/Contact/Contact';
 import Navbar from './components/Navbar/Navbar';
 import { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
+import Footer from './components/Footer';
 
 const App = () => {
   const [mousePosition, setMousePosition] = useState({
@@ -63,6 +64,8 @@ const App = () => {
         <Route path="/about" element={<About onMouseEnter={textEnter} onMouseLeave={textLeave} />} />
         <Route path="/contact" element={<Contact onMouseEnter={textEnter} onMouseLeave={textLeave} />} />
       </Routes>
+
+      <Footer />
     </Router>
   );
 };

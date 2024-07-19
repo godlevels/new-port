@@ -1,19 +1,55 @@
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import aboutImg from '../../assets/paul.jpg'
 import Skills from '../../components/Skills'
 import ProjectCard from '../../components/ProjectCard';
 import { motion } from 'framer-motion';
 
+const paragraphVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.5,
+    },
+    },
+};
+
+const wordVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+};
+
 
 
 
 const Home = () => {
+    const texts = [
+        "Frontend Development",
+        "Cloud Engineering",
+        "Technical Writing",
+    ];
+    const [currentIndex, setCurrentIndex] = useState(0);
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        }, 3000); // Change text every 3 seconds
+    
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, [texts.length]);
+    
     const projects = [
         { id: 1, title: 'Project One', description: 'This is the first project.', image: 'image1.jpg' },
         { id: 2, title: 'Project Two', description: 'This is the second project.', image: 'image2.jpg' },
         { id: 3, title: 'Project Three', description: 'This is the third project.', image: 'image3.jpg' },
     ];
 
+const paragraph = "I go beyond developing visually appealing interfaces. I even focus more on accessibility, SEO and performance optimization. As a visionary developer and creative enthusiast, I fuse innovative thinking with technical expertise to craft exceptional user experiences...";
+
+const words = paragraph.split(' ');
 
     return (
         <>
@@ -21,17 +57,28 @@ const Home = () => {
                 <div>
                     <h1 className="font-bold lg:w-10 md:w-10 sm:w-6 w-6 lg:text-[8rem] md:text-[8rem] sm:text-[6rem] text-[5rem] lg:leading-[8rem] md:leading-[8rem] sm:leading-[7rem] leading-[5rem]">Ogunsola Paul Ola</h1>
 
-                    <p className='pb-10 pt-5 lg:w-full lg:text-xl md:text-lg sm:text-base text-sm'>I go beyond developing visually appealing interfaces.I even focus more on accessibility, SEO and performance optimization.As a visionary developer and creative enthusiast, I fuse innovative thinking with technical expertise to craft exceptional user experiences...</p>
+                    <motion.div className="pb-10 pt-5 lg:w-full lg:text-xl md:text-lg sm:text-base text-sm"
+                        variants={paragraphVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {words.map((word, index) => (
+                            <motion.span key={index} variants={wordVariants} style={{ display: 'inline-block', marginRight: '5px' }}>
+                            {word}
+                            </motion.span>
+                        ))}
+                    </motion.div>
                 </div>
                 <div className="w-full h-auto flex items-center justify-between gap-7 lg:py-16 md:py-14 sm:py-12 py-10 flex-wrap-reverse">
                     <div className='lg:w-[42%] md:w-[50%] sm:w-full w-full h-auto relative overflow-hidden rounded-lg'>
                         <img src={aboutImg} alt="About Image" className='w-full lg:h-[70vh] md:h-[68vh] sm:h-[60vh] h-[55%] object-cover'/>
                     </div>
                     <div className='lg:w-[52%] md:w-full sm:w-full w-full h-auto lg:text-start md:text-start sm:text-start text-center'>
-                        <h1 className='lg:text-[4rem] md:text-[5rem] sm:text-[3rem] text-[2rem] lg:font-medium md:font-normal sm:font-normal'>Frontend Engineer</h1>
-                        <h3>Technical Writer</h3>
+                        <h1 className='lg:text-[3rem] md:text-[5rem] sm:text-[3rem] text-[2rem] lg:font-medium md:font-normal sm:font-normal'>
+                            {texts[currentIndex]}
+                        </h1>
                     </div>
-                </div>
+                </div> 
 
                 <Skills />
 

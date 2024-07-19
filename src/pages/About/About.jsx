@@ -1,7 +1,4 @@
-
 import { motion } from 'framer-motion';
-import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import photo from '../../assets/pauloo.jpg';
 
@@ -15,7 +12,7 @@ const paragraphData = [
 
 const additionalParagraphs = [
   "As a visionary developer and creative enthusiast, I fuse innovative thinking with technical expertise to craft exceptional user experiences.",
-  "I believe that shaping our surroundings is the ultimate human endeavor, and I achieve this by partnering with design-driven teams to build impactful websites and micro-sites.",
+  "I believe that shaping our surroundings is the ultimate human endeavor, and I achieve this by partnering with design-driven teams to build impactful websites and web-apps.",
   "With a diverse background in product engineering and UI design, I excel at solving complex product challenges while creating visually stunning and user-centric web experiences.",
   "Leveraging my extensive experience in leading engineering initiatives and collaborating on product teams, I bring a comprehensive skill set to every project, driving success and excellence."
 ];
@@ -110,17 +107,6 @@ const About = () => {
               {paragraph}
             </motion.p>
           ))}
-        </div>
-        <div className="flex gap-4 mt-4">
-          <Link to="/" target="_blank">
-            <FaTwitter size={20} />
-          </Link>
-          <Link to="/" target="_blank">
-            <FaLinkedin size={20} />
-          </Link>
-          <Link to="/" target="_blank">
-            <FaGithub size={20} />
-          </Link>
         </div>
       </div>
     </>
