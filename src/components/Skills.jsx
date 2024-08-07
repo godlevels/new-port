@@ -10,6 +10,10 @@ import REDUX from "../assets/redux.png"
 import TYPESCRIPT from "../assets/typescript.png"
 import FRAMER from "../assets/framer.png"
 import NEXT from "../assets/nextjs.png"
+import GIT from "../assets/git.png"
+import DOCKER from "../assets/docker.png"
+import ANSIBLE from "../assets/ansible.png"
+import TERRA from "../assets/terra.png"
 const Skills = () => {
     const Skill_data = [
         {
@@ -76,26 +80,26 @@ const Skills = () => {
       
       const Frontend_skill = [
         {
-          skill_name: "Html 5",
-          Image: HTML,
+          skill_name: "Git",
+          Image: GIT,
           width: 80,
           height: 80,
         },
         {
-          skill_name: "Css",
-          Image: CSS,
+          skill_name: "Docker",
+          Image: DOCKER,
           width: 80,
           height: 80,
         },
         {
-          skill_name: "Java Script",
-          Image: JS,
+          skill_name: "Ansible",
+          Image: ANSIBLE,
           width: 65,
           height: 65,
         },
         {
-          skill_name: "Tailwind Css",
-          Image: TAILWIND,
+          skill_name: "Terra",
+          Image: TERRA,
           width: 80,
           height: 80,
         },

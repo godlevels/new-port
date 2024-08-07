@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import aboutImg from '../../assets/paul.jpg'
+import project_img from '../../assets/bicass.png'
 import Skills from '../../components/Skills'
 import ProjectCard from '../../components/ProjectCard';
 import { motion } from 'framer-motion';
@@ -36,18 +37,18 @@ const Home = () => {
     useEffect(() => {
         const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-        }, 3000); // Change text every 3 seconds
+        }, 3000);
     
-        return () => clearInterval(interval); // Cleanup on unmount
+        return () => clearInterval(interval);
     }, [texts.length]);
     
     const projects = [
-        { id: 1, title: 'Project One', description: 'This is the first project.', image: 'image1.jpg' },
-        { id: 2, title: 'Project Two', description: 'This is the second project.', image: 'image2.jpg' },
-        { id: 3, title: 'Project Three', description: 'This is the third project.', image: 'image3.jpg' },
+        { id: 1, title: 'Bicass App', description: 'Biccas is a productivity-enhancing application designed to help users manage their tasks and organize their work efficiently. Built with a sleek and modern interface, Biccas leverages the power of the Taskio Dashboard to offer the latest features for managing work every day.', image: project_img, url: 'https://bicass-app.vercel.app/' },
+        { id: 2, title: 'Project Two', description: 'This is the second project.', image: '../../assets/bicass.png', url: 'https://bicass-app.vercel.app/' },
+        { id: 3, title: 'Project Two', description: 'This is the second project.', image: '../../assets/bicass.png', url: 'https://bicass-app.vercel.app/' },
     ];
 
-const paragraph = "I go beyond developing visually appealing interfaces. I even focus more on accessibility, SEO and performance optimization. As a visionary developer and creative enthusiast, I fuse innovative thinking with technical expertise to craft exceptional user experiences...";
+const paragraph = "What I cannot do, cannot be done!!!...";
 
 const words = paragraph.split(' ');
 
@@ -103,7 +104,7 @@ const words = paragraph.split(' ');
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
                     >
-                    <Link to="/projects" className="inline-block px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mt-5">
+                    <Link to="/projects" className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-900 mt-5">
                         See More Projects
                     </Link>
                     </motion.div>

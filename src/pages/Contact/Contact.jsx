@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Contact = () => {
 
   return (
@@ -12,21 +14,21 @@ const Contact = () => {
           <h2 className='text-base mt-2 mb-4 text-justify'>
             I am open to <span className='font-bold'>building projects</span> and <span className='font-bold'>Technical Writing</span> opportunities. You can also pitch me your Open-Source Projects.
           </h2>
-          <span className='text-base mt-4 text-justify flex items-center justify-center mt-8'>What I cannot do, cannot be done!!!</span>
+          <span className='text-base text-justify flex items-center justify-center mt-8'>What I cannot do, cannot be done!!!</span>
         </div>
       </div>
 
       <div className="my-28 flex flex-col gap-y-10">
           <div>
-            <Link className="flex justify-between">
+            <Link to="https://x.com/god_levels_?s=09" className="flex justify-between">
               <h2 className="lg:text-[3rem] md:text-[2rem] sm:text-[1rem] text-[1rem]">Twitter</h2>
               <ArrowUpRight className="lg:mt-[2.5rem] md:mt-[1.3rem]" />
             </Link>
             <div className="h-[0.1rem] bg-gray-400 w-full"></div>
           </div>
 
-          <div>
-            <Link className="flex justify-between">
+          <div className="mb-[7.5rem]">
+            <Link to="https://wa.me/qr/BH7BW4USIJYHO1" className="flex justify-between">
               <h2 className="lg:text-[3rem] md:text-[2rem] sm:text-[1rem] text-[1rem]">WhatsApp</h2>
               <ArrowUpRight className="lg:mt-[2.5rem] md:mt-[1.3rem]" />
             </Link>

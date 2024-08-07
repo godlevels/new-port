@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ProjectCard = ({ project }) => {
   return (
@@ -14,9 +15,12 @@ const ProjectCard = ({ project }) => {
       <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-t-md" />
       <h3 className="text-xl font-bold mt-4 mb-2">{project.title}</h3>
       <p className="text-gray-600 mb-4">{project.description}</p>
-      <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-        View Project
-      </button>
+      <Link to={project.url} target={'_blank'}>
+        <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-900">
+          View Project
+        </button>
+      </Link>
+      <a href="" ></a>
     </motion.div>
   );
 };

@@ -3,18 +3,8 @@ import { useInView } from 'react-intersection-observer';
 import photo from '../../assets/pauloo.jpg';
 
 const paragraphData = [
-  "I don't just code, I craft possibilities...",
-  "In 2019, during my fourth year at university, I had the opportunity to undergo my Internship at a software development company.",
-  "This played a pivotal role in my journey into Frontend engineering and ever since, I have been building applications for diverse ecosystems, including Blockchain and Fintech ecosystems.",
-  "I am constantly immersed in learning, I document my insights and share them through articles, aiming to reach a wider audience. Explore my blog here.",
-  "Apart from my coding pursuits, I am an avid gamer and I have two furry companions - Billy and Shepherd. They remind me to breathe and reconnect with my surroundings."
-];
-
-const additionalParagraphs = [
-  "As a visionary developer and creative enthusiast, I fuse innovative thinking with technical expertise to craft exceptional user experiences.",
-  "I believe that shaping our surroundings is the ultimate human endeavor, and I achieve this by partnering with design-driven teams to build impactful websites and web-apps.",
-  "With a diverse background in product engineering and UI design, I excel at solving complex product challenges while creating visually stunning and user-centric web experiences.",
-  "Leveraging my extensive experience in leading engineering initiatives and collaborating on product teams, I bring a comprehensive skill set to every project, driving success and excellence."
+  "I'm shy and I don't want to lie...",
+  "Let's work together. You'll find out"
 ];
 
 const textVariant = {
@@ -31,10 +21,6 @@ const textVariant = {
 
 const About = () => {
   const [ref, inView] = useInView({
-    threshold: 0.1,
-  });
-
-  const [secondRef, secondInView] = useInView({
     threshold: 0.1,
   });
 
@@ -75,38 +61,14 @@ const About = () => {
             animate={inView ? 'visible' : 'visible'}
             variants={textVariant}
           >
-            <div className="max-w-[90rem] overflow-hidden">
+            <div className="max-w-[90rem] overflow-hidden mt-20">
               {paragraphData.map((text, index) => (
-                <motion.p key={index} className="text-base mt-4 text-justify" variants={textVariant}>
+                <motion.p key={index} className="text-base text-justify" variants={textVariant}>
                   {text}
                 </motion.p>
               ))}
             </div>
           </motion.div>
-        </div>
-
-        <div className="w-[75%]" ref={secondRef}>
-          <motion.h1
-            className="lg:text-[2rem] md:text-[3rem] sm:text-[2rem] text-[1rem] lg:font-medium md:font-normal sm:font-normal"
-            initial="hidden"
-            animate={secondInView ? 'visible' : 'hidden'}
-            variants={textVariant}
-          >
-            I go beyond developing visually appealing interfaces.
-          </motion.h1>
-          <motion.span
-            className="lg:text-xl md:text-lg sm:text-base text-sm"
-            initial="hidden"
-            animate={secondInView ? 'visible' : 'hidden'}
-            variants={textVariant}
-          >
-            I even focus more on accessibility, SEO and performance optimization.
-          </motion.span>
-          {additionalParagraphs.map((paragraph, index) => (
-            <motion.p key={index} className="text-base mt-4 text-justify" initial="hidden" animate={secondInView ? 'visible' : 'hidden'} variants={textVariant}>
-              {paragraph}
-            </motion.p>
-          ))}
         </div>
       </div>
     </>
